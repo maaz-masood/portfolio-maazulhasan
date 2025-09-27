@@ -23,7 +23,9 @@ body {
 
 /* Hero */
 .hero {
-  background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+  background: linear-gradient(-45deg, #0077b6, #023e8a, #00b4d8, #023e8a);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
   color: #fff;
   text-align: center;
   padding: 80px 20px;
@@ -49,6 +51,12 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
 /* Navigation */
 .navbar {
   position: sticky;
@@ -56,6 +64,16 @@ body {
   background: var(--primary-color);
   text-align: center;
   z-index: 1000;
+  transform: translateY(-50px);
+  opacity: 0;
+  animation: slideDown 0.8s forwards;
+}
+
+@keyframes slideDown {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .navbar ul {
@@ -138,6 +156,10 @@ body {
   margin: 10px 0;
   padding-left: 20px;
   position: relative;
+  transform: scale(0.8);
+  opacity: 0;
+  animation: popIn 0.5s forwards;
+  animation-delay: calc(var(--i) * 0.1s);
 }
 
 .skills-list li::before {
@@ -147,15 +169,26 @@ body {
   left: 0;
 }
 
+@keyframes popIn {
+  to { transform: scale(1); opacity: 1; }
+}
+
 /* Contact Links */
 #contact a {
   color: var(--secondary-color);
   text-decoration: none;
+  transition: transform 0.3s;
 }
 
 #contact a:hover {
   text-decoration: underline;
   color: var(--accent-color);
+  animation: pulse 0.6s infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
 }
 
 /* Footer */
