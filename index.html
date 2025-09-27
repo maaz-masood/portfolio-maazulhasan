@@ -4,70 +4,84 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maaz Masood Portfolio</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Maaz Masood</h1>
-      <p>Graduate Student in AI &amp; Business Analytics | Data Science &amp; ML Enthusiast</p>
-    </div>
-  </header>
+<!-- Hero Section -->
+<header class="hero">
+  <h1>Maaz Masood</h1>
+  <p>Graduate Student in AI & Business Analytics | Data Science & ML Enthusiast</p>
+</header>
 
-  <!-- Navigation -->
-  <nav class="navbar">
-    <ul>
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<!-- Navigation -->
+<nav class="navbar">
+  <ul>
+    <li><a href="#about">About Me</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <!-- About -->
-  <section id="about" class="section">
-    <h2>About Me</h2>
-    <p>Hello! I'm Maaz, a graduate student in AI and Business Analytics, passionate about data science and building intelligent solutions. Enthusiastic and results-driven MS in Artificial Intelligence and Business Analytics graduate student seeking opportunities to apply expertise in data science, machine learning, and business analytics. Strong technical foundation in Python, SQL, and AI frameworks, with excellent problem-solving and collaboration skills.</p>
-  </section>
+<!-- About Me -->
+<section id="about" class="section fade-in">
+  <h2>About Me</h2>
+  <p>Hello! I'm Maaz, a graduate student in AI and Business Analytics, passionate about data science and building intelligent solutions.</p>
+  <p>Enthusiastic and results-driven MS in Artificial Intelligence and Business Analytics graduate student seeking opportunities to apply expertise in data science, machine learning, and business analytics. Strong technical foundation in Python, SQL, and AI frameworks, with excellent problem-solving and collaboration skills.</p>
+</section>
 
-  <!-- Projects -->
-  <section id="projects" class="section alt">
-    <h2>Projects</h2>
+<!-- Projects -->
+<section id="projects" class="section alt fade-in">
+  <h2>Projects</h2>
+  <div class="project-card">
+    <h3>Enhancing Predictive Modelling in Neurological Care Using Federated Learning</h3>
+    <p>Developed a privacy-preserving Alzheimer’s prediction model using Federated Learning, enabling multiple hospitals to collaboratively train without sharing patient data. Improved model accuracy while ensuring HIPAA and GDPR compliance.</p>
+  </div>
+  <div class="project-card">
+    <h3>Predictive Sales Analytics</h3>
+    <p>Created a predictive model using Python and ML techniques to forecast sales trends and inform business strategy.</p>
+  </div>
+</section>
 
-    <div class="project-card">
-      <h3>Enhancing Predictive Modelling in Neurological Care Using Federated Learning</h3>
-      <p>Developed a privacy-preserving Alzheimer’s prediction model using Federated Learning, enabling multiple hospitals to collaboratively train without sharing patient data. Improved model accuracy while ensuring HIPAA and GDPR compliance.</p>
-    </div>
+<!-- Skills -->
+<section id="skills" class="section fade-in">
+  <h2>Skills</h2>
+  <ul class="skills-list">
+    <li>Python, SQL, R</li>
+    <li>Machine Learning & Deep Learning</li>
+    <li>Power BI & Tableau</li>
+    <li>Snowflake & Databricks</li>
+  </ul>
+</section>
 
-    <div class="project-card">
-      <h3>Predictive Sales Analytics</h3>
-      <p>Created a predictive model using Python and ML techniques to forecast sales trends and inform business strategy.</p>
-    </div>
-  </section>
+<!-- Contact -->
+<section id="contact" class="section alt fade-in">
+  <h2>Contact</h2>
+  <p>Email: <a href="mailto:maazulhasan@usf.edu">maazulhasan@usf.edu</a></p>
+  <p>LinkedIn: <a href="https://linkedin.com/in/maaz-masood" target="_blank">linkedin.com/in/maaz-masood</a></p>
+</section>
 
-  <!-- Skills -->
-  <section id="skills" class="section">
-    <h2>Skills</h2>
-    <ul class="skills-list">
-      <li>Python, SQL, R</li>
-      <li>Machine Learning &amp; Deep Learning</li>
-      <li>Power BI &amp; Tableau</li>
-      <li>Snowflake &amp; Databricks</li>
-    </ul>
-  </section>
+<!-- Footer -->
+<footer>
+  &copy; 2025 Maaz Masood
+</footer>
 
-  <!-- Contact -->
-  <section id="contact" class="section alt">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:maazulhasan@usf.edu">maazulhasan@usf.edu</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/maaz-masood/" target="_blank">linkedin.com/in/maaz-masood</a></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Maaz Masood</p>
-  </footer>
+<!-- Optional JS for fade-in on scroll -->
+<script>
+  const faders = document.querySelectorAll('.fade-in');
+  const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+  const appearOnScroll = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    });
+  }, appearOptions);
+  faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
 
 </body>
 </html>
